@@ -30,16 +30,12 @@ class DataPadViewModel(
     }
 
     fun searchUpgrade(id: Int) {
-        if (id.toString().length != 3) {
-            val count = dataPadDao.upgradePresent(id)
-            if (count != 0) {
-                val upgrade: Upgrades = dataPadDao.findUpgrade(id)
-                _upgradeSearch.value = (
-                        upgrade.label + ": " +
-                        upgrade.cost.toString())
-            } else {
-                _upgradeSearch.value = "Please enter a valid upgrade ID."
-            }
+        val count = dataPadDao.upgradePresent(id)
+        if (count != 0) {
+            val upgrade: Upgrades = dataPadDao.findUpgrade(id)
+            _upgradeSearch.value = (
+                    upgrade.label + ": " +
+                    upgrade.cost.toString())
         } else {
             _upgradeSearch.value = "Please enter a valid upgrade ID."
         }
