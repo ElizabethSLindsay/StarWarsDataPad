@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.starwarsdatapad.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_questFragment"
+            app:destination="@id/questFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tradeFragment"
+            app:destination="@id/tradeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_upgradeFragment"
+            app:destination="@id/upgradeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_aurebeshFragment"
+            app:destination="@id/aurebeshFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questFragment"
+        android:name="com.example.starwarsdatapad.ui.QuestFragment"
+        android:label="QuestFragment" >
+        <action
+            android:id="@+id/action_questFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tradeFragment"
+        android:name="com.example.starwarsdatapad.ui.TradeFragment"
+        android:label="TradeFragment" >
+        <action
+            android:id="@+id/action_tradeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/upgradeFragment"
+        android:name="com.example.starwarsdatapad.ui.UpgradeFragment"
+        android:label="UpgradeFragment" >
+        <action
+            android:id="@+id/action_upgradeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aurebeshFragment"
+        android:name="com.example.starwarsdatapad.ui.AurebeshFragment"
+        android:label="fragment_aurebesh"
+        tools:layout="@layout/fragment_aurebesh" >
+        <action
+            android:id="@+id/action_aurebeshFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>

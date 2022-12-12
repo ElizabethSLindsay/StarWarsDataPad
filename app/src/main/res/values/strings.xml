@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Star Wars Data Pad</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="quests_btn">Quests</string>
+    <string name="trade_btn">Trade</string>
+    <string name="upgrade_btn">Upgrade</string>
+    <string name="credits">Credits: $1</string>
+    <string name="score">Score: $1</string>
+    <string name="home_btn">Home</string>
+    <string name="buy_tab">Buy</string>
+    <string name="sell_tab">Sell</string>
+    <string name="quest_info">Quest info</string>
+    <string name="quest_id_text">Quest ID:</string>
+    <string name="_4357">4357</string>
+    <string name="quest_name">Quest Name</string>
+    <string name="enter_upgrade">Enter Upgrade # :</string>
+    <string name="inventory">Inventory</string>
+    <string name="id">Inventory ID:</string>
+    <string name="item">Item</string>
+    <string name="amount">Amount</string>
+    <string name="price_ea">Price/ea</string>
+    <string name="qty_buy">Qty: $0</string>
+    <string name="buy">Buy</string>
+    <string name="sell">Sell</string>
+    <string name="clear">Clear</string>
+    <string name="aurebesh_translation">Aurebesh translation</string>
+    <string name="space">Space</string>
+    <string name="backspace">Backspace</string>
+    <string name="aurebesh_letter">Aurebesh Letter</string>
+    <string name="translate">Translate</string>
+    <string name="buy_upgrade">Buy Upgrade</string>
+    <string name="upgrade_id">Upgrade ID:</string>
+</resources>
