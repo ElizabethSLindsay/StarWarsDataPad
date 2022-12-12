@@ -5,7 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.example.starwarsdatapad.BaseApplication
+import com.example.starwarsdatapad.R
+import com.example.starwarsdatapad.data.UserData
 import com.example.starwarsdatapad.databinding.FragmentAurebeshBinding
+import com.example.starwarsdatapad.viewmodel.DataPadViewModel
+import com.example.starwarsdatapad.viewmodel.DataPadViewModelFactory
 
 
 class AurebeshFragment : Fragment() {
@@ -13,13 +20,13 @@ class AurebeshFragment : Fragment() {
     private var _binding: FragmentAurebeshBinding? = null
     private val binding get() = _binding!!
     private var text: String = ""
-    /*private lateinit var userData: UserData
+    lateinit var userData: UserData
 
     private val viewModel: DataPadViewModel by activityViewModels {
         DataPadViewModelFactory(
             (activity?.application as BaseApplication).database.DataPadDao()
         )
-    }*/
+    }
 
 
     override fun onCreateView(
@@ -28,13 +35,14 @@ class AurebeshFragment : Fragment() {
     ): View? {
 
         _binding = FragmentAurebeshBinding.inflate(inflater, container, false)
-        /*viewModel.userData.observe(viewLifecycleOwner) { value ->
+        viewModel.userData.observe(viewLifecycleOwner) { value ->
             userData = value
+            binding.credits.text = getString(R.string.credits, userData.credits.toString())
+            binding.score.text = getString(R.string.score, userData.score.toString())
         }
-
         binding.homeBtn.setOnClickListener {
             findNavController().navigate(R.id.action_aurebeshFragment_to_homeFragment)
-        }*/
+        }
 
         binding.apply {
             aBtn.setOnClickListener {addLetter("a")}
@@ -75,8 +83,6 @@ class AurebeshFragment : Fragment() {
             text = ""
             storeText()
         }
-        /*binding.credits.text = userData.credits.toString()
-        binding.score.text = userData.score.toString()*/
 
         return binding.root
     }

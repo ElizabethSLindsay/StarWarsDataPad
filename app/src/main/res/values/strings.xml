@@ -5,8 +5,8 @@
     <string name="quests_btn">Quests</string>
     <string name="trade_btn">Trade</string>
     <string name="upgrade_btn">Upgrade</string>
-    <string name="credits">Credits: $1</string>
-    <string name="score">Score: $1</string>
+    <string name="credits">Credits: %s</string>
+    <string name="score">Score: %s</string>
     <string name="home_btn">Home</string>
     <string name="buy_tab">Buy</string>
     <string name="sell_tab">Sell</string>
@@ -20,7 +20,7 @@
     <string name="item">Item</string>
     <string name="amount">Amount</string>
     <string name="price_ea">Price/ea</string>
-    <string name="qty_buy">Qty: $0</string>
+    <string name="qty_buy">Qty: %s</string>
     <string name="buy">Buy</string>
     <string name="sell">Sell</string>
     <string name="clear">Clear</string>

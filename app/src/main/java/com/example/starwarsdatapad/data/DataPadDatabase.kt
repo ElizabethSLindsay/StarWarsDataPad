@@ -8,7 +8,15 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverter
 
 
-@Database(entities = [User::class], version = 1, exportSchema = false)
+@Database(entities = [User::class,
+    Quests::class,
+    QuestLines::class,
+    Decision::class,
+    Trade::class,
+    Upgrades::class,
+    Inventory::class,
+    Ships::class
+    ], version = 2, exportSchema = false)
 abstract class DataPadDatabase: RoomDatabase() {
 
     abstract fun DataPadDao(): DataPadDao
