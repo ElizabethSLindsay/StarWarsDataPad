@@ -54,7 +54,7 @@ class UpgradeFragment : Fragment() {
             binding.score.text = getString(R.string.score, userData.score.toString())
         }
 
-        viewModel.upgradeSearch.observe(viewLifecycleOwner) { value ->
+        /*viewModel.upgradeSearch.observe(viewLifecycleOwner) { value ->
             binding.upgradeItemSearch.text = value
         }
 
@@ -68,11 +68,11 @@ class UpgradeFragment : Fragment() {
                 upgradeString += upgrade.label + "\n"
             }
             binding.inventoryItem.text = upgradeString
-        }
+        }*/
 
-        binding.searchBtn.setOnClickListener {
+        /*binding.searchBtn.setOnClickListener {
             findUpgrade()
-        }
+        }*/
 
         binding.buyUpgradeBtn.setOnClickListener {  }
 
@@ -83,9 +83,9 @@ class UpgradeFragment : Fragment() {
         return binding.root
     }
 
-    private fun findUpgrade() {
+    /*private fun findUpgrade() {
         uiScope.launch(Dispatchers.IO) {
             viewModel.searchUpgrade(id)
         }
-    }
+    }*/
 }

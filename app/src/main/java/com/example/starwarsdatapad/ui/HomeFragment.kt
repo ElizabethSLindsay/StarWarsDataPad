@@ -11,10 +11,15 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.starwarsdatapad.BaseApplication
 import com.example.starwarsdatapad.R
+import com.example.starwarsdatapad.data.Upgrades
 import com.example.starwarsdatapad.data.UserData
 import com.example.starwarsdatapad.databinding.FragmentHomeBinding
 import com.example.starwarsdatapad.viewmodel.DataPadViewModel
 import com.example.starwarsdatapad.viewmodel.DataPadViewModelFactory
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 
 
 class HomeFragment : Fragment() {
@@ -60,5 +65,4 @@ class HomeFragment : Fragment() {
 
         return binding.root
     }
-
 }

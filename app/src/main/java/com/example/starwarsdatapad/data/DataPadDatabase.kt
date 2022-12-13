@@ -15,8 +15,9 @@ import androidx.room.TypeConverter
     Trade::class,
     Upgrades::class,
     Inventory::class,
-    Ships::class
-    ], version = 2, exportSchema = false)
+    Ships::class,
+    DataStrings::class
+    ], version = 1, exportSchema = false)
 abstract class DataPadDatabase: RoomDatabase() {
 
     abstract fun DataPadDao(): DataPadDao
@@ -34,6 +35,7 @@ abstract class DataPadDatabase: RoomDatabase() {
                     "data_pad_database"
                 )
                     .fallbackToDestructiveMigration()
+                    .createFromAsset("database/starwars.db")
                     .build()
                 INSTANCE = instance
                 return instance

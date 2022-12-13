@@ -14,10 +14,12 @@ data class Quests (
     val questLineId: Int,
     @ColumnInfo(name = "display_text_value")
     val displayTextVal: String,
+    @ColumnInfo(name = "reminder_text")
+    val reminderText: String,
+    @ColumnInfo(name = "requires")
+    val requires: String,
     @ColumnInfo(name = "failure_message")
     val failureMessage: String,
-    @ColumnInfo(name = "requires")
-    val requires: Int,
     @ColumnInfo(name = "decision_id")
     val decisionId: Int,
     @ColumnInfo(name = "credit_reward")
@@ -51,6 +53,8 @@ data class QuestLines (
 data class Decision (
     @PrimaryKey
     val id: Int,
+    @ColumnInfo(name = "required_incoming_id")
+    val reqIncomingId: Int,
     @ColumnInfo(name = "required_quest_ids")
     val reqQuestIds: String,
     @ColumnInfo(name = "required_inventory_ids")
@@ -93,6 +97,25 @@ data class Upgrades (
     val owned: Boolean = false
 )
 
+@Entity(tableName = "user")
+data class User (
+    @PrimaryKey
+    val id: Int,
+    @ColumnInfo(name = "credits")
+    val credits: Int,
+    @ColumnInfo(name = "score")
+    val score: Int,
+    @ColumnInfo(name = "ship")
+    val ship: Int,
+    @ColumnInfo(name = "upgrades")
+    val upgrades: String
+)
+
+data class UserData (
+    val credits: Int,
+    val score: Int,
+)
+
 
 @Entity(tableName = "inventory")
 data class Inventory (
@@ -110,8 +133,6 @@ data class Ships (
     val id: Int,
     @ColumnInfo(name = "name")
     val name: String,
-    @ColumnInfo(name = "cost")
-    val cost: Int,
     @ColumnInfo(name = "cargo")
     val cargo: Int,
     @ColumnInfo(name = "smuggle")
@@ -134,23 +155,10 @@ data class Ships (
     val owned: Boolean = false
 )
 
-@Entity(tableName = "user")
-data class User (
+@Entity(tableName = "data_strings")
+data class DataStrings (
     @PrimaryKey
     val id: Int,
-    @ColumnInfo(name = "credits")
-    val credits: Int,
-    @ColumnInfo(name = "score")
-    val score: Int,
-    @ColumnInfo(name = "ship")
-    val ship: String,
-    @ColumnInfo(name = "cargo_spaces")
-    val cargoSpaces: Int,
-    @ColumnInfo(name = "upgrades")
-    val upgrades: String
-)
-
-data class UserData (
-    val credits: Int,
-    val score: Int,
+    @ColumnInfo(name= "text_value")
+    val textValue: String
 )
