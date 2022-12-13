@@ -39,8 +39,7 @@ interface DataPadDao {
     @Query("""
         SELECT *
         FROM ships
-        WHERE owned = 1
-        LIMIT 1
+        WHERE id = (SELECT ship FROM USER WHERE id =1) 
     """)
     fun getShip():Ships
 

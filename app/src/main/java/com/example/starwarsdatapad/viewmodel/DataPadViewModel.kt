@@ -34,20 +34,17 @@ class DataPadViewModel(
                 (activeUser != null) &&
                 (activeUser.credits >= upgrade.cost)
             ) {
+                val credits: Int = activeUser.credits - upgrade.cost
+                val score: Int = (activeUser.score + (upgrade.cost * 1.25)).toInt()
+                dataPadDao.updateUser(credits, score)
+                dataPadDao.updateDataString(1, " ")
                 if (id !in listOf(771,817,994)) {
-                    val credits: Int = activeUser.credits - upgrade.cost
-                    val score: Int = (activeUser.score + (upgrade.cost * 1.25)).toInt()
-                    dataPadDao.updateUser(credits, score)
                     dataPadDao.buyUpgrade(id)
-                    dataPadDao.updateDataString(1, " ")
                 } else {
-                    val credits: Int = activeUser.credits - upgrade.cost
-                    val score: Int = (activeUser.score + (upgrade.cost * 1.5)).toInt()
-                    dataPadDao.updateUser(credits, score)
-                    dataPadDao.buyUpgrade(id)
-                    dataPadDao.updateDataString(1, " ")
+                    Log.d("Buy", "Bought " + upgrade.label+ ": " + id.toString())
                     dataPadDao.updateShip(id)
                     dataPadDao.resetUpgrades()
+                    dataPadDao.buyUpgrade(id)
                 }
             } else if (
                 (activeUser != null) &&
@@ -58,6 +55,8 @@ class DataPadViewModel(
             } else {
                 dataPadDao.updateDataString(1, "Please enter a valid upgrade ID.")
             }
+        } else {
+            dataPadDao.updateDataString(1, "Please enter a valid upgrade ID.")
         }
     }
 
