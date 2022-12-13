@@ -69,8 +69,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:inputType="number"
-        android:autofillHints="4357"
-        android:hint="@string/_4357"
+        android:autofillHints="435723"
+        android:hint="@string/_435723"
         app:layout_constraintTop_toBottomOf="@+id/quest_text"
         app:layout_constraintStart_toEndOf="@+id/quest_id_text"/>
 

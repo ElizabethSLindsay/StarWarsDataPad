@@ -54,27 +54,31 @@ class UpgradeFragment : Fragment() {
             binding.score.text = getString(R.string.score, userData.score.toString())
         }
 
-        /*viewModel.upgradeSearch.observe(viewLifecycleOwner) { value ->
+        viewModel.upgradeString.observe(viewLifecycleOwner) { value ->
             binding.upgradeItemSearch.text = value
         }
 
         uiScope.launch(Dispatchers.IO) {
-            var upgradeString: String = ""
+            var upgradeString = ""
             ship = viewModel.getShip()
             upgradeString += "Current Ship: " + ship.name + "\n\n"
             upgrades = viewModel.getUpgrades()
             for (upgrade: Upgrades in upgrades) {
-                if (upgrade.label !in shipList)
-                upgradeString += upgrade.label + "\n"
+                if (upgrade.label !in shipList) {
+                    upgradeString += upgrade.label + "\n"
+                }
             }
             binding.inventoryItem.text = upgradeString
-        }*/
+            binding.upgradeIdInput.text.clear()
+        }
 
-        /*binding.searchBtn.setOnClickListener {
+        binding.searchBtn.setOnClickListener {
             findUpgrade()
-        }*/
+        }
 
-        binding.buyUpgradeBtn.setOnClickListener {  }
+        binding.buyUpgradeBtn.setOnClickListener {
+            buyUpgrade()
+        }
 
         binding.homeBtn.setOnClickListener {
             findNavController().navigate(R.id.action_upgradeFragment_to_homeFragment)
@@ -83,9 +87,27 @@ class UpgradeFragment : Fragment() {
         return binding.root
     }
 
-    /*private fun findUpgrade() {
+    private fun findUpgrade() {
         uiScope.launch(Dispatchers.IO) {
-            viewModel.searchUpgrade(id)
+            viewModel.searchUpgrade(
+                binding.upgradeIdInput.text.toString().toInt())
         }
-    }*/
+    }
+
+    private fun buyUpgrade() {
+        uiScope.launch(Dispatchers.IO) {
+            viewModel.buyUpgrade(
+                binding.upgradeIdInput.text.toString().toInt())
+            var upgradeString = ""
+            ship = viewModel.getShip()
+            upgradeString += "Current Ship: " + ship.name + "\n\n"
+            upgrades = viewModel.getUpgrades()
+            for (upgrade: Upgrades in upgrades) {
+                if (upgrade.label !in shipList) {
+                    upgradeString += upgrade.label + "\n"
+                }
+            }
+            binding.inventoryItem.text = upgradeString
+        }
+    }
 }
