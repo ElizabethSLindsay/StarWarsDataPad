@@ -89,8 +89,11 @@ class UpgradeFragment : Fragment() {
 
     private fun findUpgrade() {
         uiScope.launch(Dispatchers.IO) {
-            viewModel.searchUpgrade(
-                binding.upgradeIdInput.text.toString().toInt())
+            if (binding.upgradeIdInput.text.toString() != "") {
+                viewModel.searchUpgrade(binding.upgradeIdInput.text.toString().toInt())
+            } else {
+                viewModel.searchUpgrade(0)
+            }
         }
     }
 

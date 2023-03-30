@@ -1,11 +1,9 @@
 package com.example.starwarsdatapad.data
 
 import android.content.Context
-import androidx.constraintlayout.widget.Placeholder
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverter
 
 
 @Database(entities = [User::class,
@@ -17,7 +15,7 @@ import androidx.room.TypeConverter
     Inventory::class,
     Ships::class,
     DataStrings::class
-    ], version = 1, exportSchema = false)
+    ], version = 6, exportSchema = false)
 abstract class DataPadDatabase: RoomDatabase() {
 
     abstract fun DataPadDao(): DataPadDao
@@ -34,7 +32,7 @@ abstract class DataPadDatabase: RoomDatabase() {
                     DataPadDatabase::class.java,
                     "data_pad_database"
                 )
-                    .fallbackToDestructiveMigration()
+                    //.fallbackToDestructiveMigration()
                     .createFromAsset("database/starwars.db")
                     .build()
                 INSTANCE = instance

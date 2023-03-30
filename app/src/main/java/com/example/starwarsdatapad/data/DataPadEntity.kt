@@ -116,7 +116,6 @@ data class UserData (
     val score: Int,
 )
 
-
 @Entity(tableName = "inventory")
 data class Inventory (
     @PrimaryKey

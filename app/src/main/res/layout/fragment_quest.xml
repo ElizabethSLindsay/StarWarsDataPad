@@ -15,7 +15,8 @@
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/quest_text"/>
 
     <TextView
         android:id="@+id/score"
@@ -44,13 +45,15 @@
     <TextView
         android:id="@+id/quest_text"
         android:layout_width="match_parent"
-        android:layout_height="148dp"
-        android:layout_margin="16dp"
+        android:layout_height="250dp"
+        android:layout_margin="8dp"
         android:text="@string/quest_info"
+        android:scrollbars="vertical"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
+        app:layout_constraintBottom_toTopOf="@+id/quest_id_input"/>
 
     <TextView
         android:id="@+id/quest_id_text"
@@ -72,7 +75,9 @@
         android:autofillHints="435723"
         android:hint="@string/_435723"
         app:layout_constraintTop_toBottomOf="@+id/quest_text"
-        app:layout_constraintStart_toEndOf="@+id/quest_id_text"/>
+        app:layout_constraintStart_toEndOf="@+id/quest_id_text"
+        app:layout_constraintBottom_toTopOf="@id/quest_text_view"
+        app:layout_constraintEnd_toStartOf="@id/search_btn"/>
 
     <Button
         android:id="@+id/search_btn"
@@ -82,12 +87,15 @@
         app:icon="@drawable/quest"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quest_text"
-        app:layout_constraintStart_toEndOf="@+id/quest_id_input"/>
+        app:layout_constraintStart_toEndOf="@+id/quest_id_input"
+        app:layout_constraintBottom_toTopOf="@id/quest_text_view"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/quest_recycler_view"
+    <TextView
+        android:id="@+id/quest_text_view"
         android:layout_width="match_parent"
-        android:layout_height="380dp"
+        android:layout_margin="8dp"
+        android:layout_height="296dp"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@+id/home_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,11 +106,13 @@
         style="@style/Widget.MaterialComponents.Button.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
         android:text="@string/home_btn"
         app:icon="@drawable/home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quest_text_view"/>
 
 
 
